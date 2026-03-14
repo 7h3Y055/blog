@@ -23,32 +23,32 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "Inter",
+        body: "Inter",
+        code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#eff1f5",       // Latte Base
+          lightgray: "#ccd0da",   // Latte Surface
+          gray: "#bcc0cc",        // Latte Overlay
+          darkgray: "#4c4f69",    // Latte Text
+          dark: "#d20f39",        // Latte Red (Headers)
+          secondary: "#1e66f5",   // Latte Blue (Links)
+          tertiary: "#40a02b",    // Latte Green (Graph Nodes)
+          highlight: "rgba(30, 102, 245, 0.1)",
+          textHighlight: "#df8e1d88",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#1e1e2e",       // Mocha Base (Background)
+          lightgray: "#313244",   // Mocha Surface
+          gray: "#45475a",        // Mocha Overlay
+          darkgray: "#cdd6f4",    // Mocha Text
+          dark: "#f38ba8",        // Mocha Red (Headers)
+          secondary: "#89b4fa",   // Mocha Blue (Links/Graph)
+          tertiary: "#a6e3a1",    // Mocha Green (Graph Nodes)
+          highlight: "rgba(137, 180, 250, 0.15)",
+          textHighlight: "#f9e2af88",
         },
       },
     },
