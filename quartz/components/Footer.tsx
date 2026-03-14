@@ -1,33 +1,19 @@
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import style from "./styles/footer.scss"
-import { version } from "../../package.json"
-import { i18n } from "../i18n"
+import { QuartzComponentConstructor } from "./types"
 
-interface Options {
-  links: Record<string, string>
-}
-
-export default ((opts?: Options) => {
-  const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    const year = new Date().getFullYear()
-    const links = opts?.links ?? []
+export default (() => {
+  return () => {
     return (
-      <footer class={`${displayClass ?? ""}`}>
+      <footer>
         <p>
-          {i18n(cfg.locale).components.footer.createdWith}{" "}
-          <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
+          Youssef Bouchmama &copy; 2026
+          &nbsp;·&nbsp;
+          <a href="mailto:youssefbouchmama@hotmail.com">email</a>
+          &nbsp;·&nbsp;
+          <a href="https://github.com/7h3Y055" target="_blank">github</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.linkedin.com/in/youssef-bouchmama-281119212/" target="_blank">linkedin</a>
         </p>
-        <ul>
-          {Object.entries(links).map(([text, link]) => (
-            <li>
-              <a href={link}>{text}</a>
-            </li>
-          ))}
-        </ul>
       </footer>
     )
   }
-
-  Footer.css = style
-  return Footer
 }) satisfies QuartzComponentConstructor

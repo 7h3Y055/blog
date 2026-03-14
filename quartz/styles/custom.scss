@@ -1,3 +1,319 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+
+/* Hide the red "Resume" h1 + date/read-time Quartz auto-generates */
+.page[data-slug="resume"] .article-title,
+.page[data-slug="resume"] h1.article-title,
+.page[data-slug="resume"] header.article-header,
+.page[data-slug="resume"] .content-meta,
+.page[data-slug="resume"] .page-header,
+.page[data-slug="resume"] article > h1:first-child,
+.page[data-slug="resume"] .popover-hint > h1,
+.page[data-slug="resume"] article > p.content-meta,
+.resume-page .article-title,
+.resume-page h1.article-title,
+.resume-page .content-meta,
+.resume-page .page-header {
+  display: none !important;
+}
+
+/* Hide ToC */
+.page[data-slug="resume"] .toc,
+.resume-page .toc {
+  display: none !important;
+}
+
+/* ── Base ── */
+.cv {
+  font-family: var(--bodyFont);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--darkgray);
+}
+
+/* ── Header ── */
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+}
+
+.cv-name {
+  font-family: var(--headerFont);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.1;
+  margin: 0 0 6px 0 !important;
+  color: var(--darkgray) !important;
+  border-bottom: none !important;
+}
+
+.cv-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 3px 0;
+  color: var(--darkgray);
+}
+
+.cv-location {
+  font-size: 12px;
+  color: var(--darkgray);
+  margin: 0;
+}
+
+.cv-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  padding-top: 4px;
+}
+
+.cv-header-right a,
+.cv-header-right span {
+  font-size: 12px;
+  color: var(--darkgray);
+  text-decoration: none;
+}
+
+.cv-header-right a:hover {
+  color: var(--secondary);
+}
+
+/* ── Dividers ── */
+.cv hr {
+  border: none !important;
+  border-top: 1px solid var(--lightgray) !important;
+  margin: 0 !important;
+}
+
+/* ── Section rows ── */
+.cv-section {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0 28px;
+  padding: 22px 0;
+}
+
+.cv-label {
+  font-family: var(--codeFont);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--darkgray);
+  padding-top: 2px;
+  line-height: 1.4;
+}
+
+.cv-body {
+  font-size: 14px;
+  color: var(--darkgray);
+  line-height: 1.7;
+}
+
+/* ── Skills table ── */
+.cv-body table {
+  border-collapse: collapse !important;
+  width: 100%;
+  font-size: 13px;
+  margin: 0 !important;
+}
+
+.cv-body table td {
+  padding: 6px 12px 6px 0 !important;
+  border: none !important;
+  vertical-align: top;
+  background: transparent !important;
+  font-size: 13px;
+}
+
+.cv-body table td:first-child {
+  white-space: nowrap;
+  color: var(--darkgray);
+  width: 130px;
+  font-family: var(--codeFont);
+  font-size: 11px;
+  padding-top: 8px !important;
+}
+
+.cv-body table tr {
+  border-bottom: 1px solid var(--lightgray) !important;
+  background: transparent !important;
+}
+
+.cv-body table tr:last-child {
+  border-bottom: none !important;
+}
+
+/* ── Entry blocks ── */
+.cv-entry {
+  margin-bottom: 28px;
+}
+
+.cv-entry:last-child {
+  margin-bottom: 0;
+}
+
+.cv-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.cv-entry-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--darkgray);
+}
+
+.cv-entry-date {
+  font-family: var(--codeFont);
+  font-size: 11px;
+  color: var(--darkgray);
+}
+
+.cv-entry-role {
+  font-size: 12px;
+  color: var(--darkgray);
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+/* ── Bullet lists ── */
+.cv-body ul {
+  padding-left: 0 !important;
+  list-style: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 7px !important;
+  margin: 10px 0 !important;
+}
+
+.cv-body ul li {
+  padding-left: 18px !important;
+  position: relative !important;
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+  color: var(--darkgray) !important;
+  list-style: none !important;
+}
+
+/* Quartz injects a <p> inside <li> sometimes — flatten it */
+.cv-body ul li p {
+  margin: 0 !important;
+  display: inline !important;
+}
+
+.cv-body ul li::marker {
+  display: none !important;
+  content: '' !important;
+}
+
+.cv-body ul li::before {
+  content: '–' !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: var(--darkgray) !important;
+  font-weight: 400 !important;
+}
+
+/* ── Stack / meta lines ── */
+.cv-stack {
+  font-family: var(--codeFont);
+  font-size: 11px;
+  color: var(--darkgray);
+  margin-top: 12px;
+  letter-spacing: .03em;
+  display: block;
+}
+
+/* ── Project stat ── */
+.cv-stat {
+  font-family: var(--codeFont);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--darkgray);
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* ── Project link ── */
+.cv-link {
+  font-size: 12px !important;
+  color: var(--secondary) !important;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.cv-link:hover {
+  text-decoration: underline !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .cv-section {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 18px 0;
+  }
+
+  .cv-label {
+    font-size: 9px;
+  }
+
+  .cv-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cv-header-right {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+
+  .cv-entry-head {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cv-name {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cv-body table,
+  .cv-body table tbody,
+  .cv-body table tr,
+  .cv-body table td {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .cv-body table td:first-child {
+    padding-bottom: 2px !important;
+    padding-top: 10px !important;
+    color: var(--darkgray);
+    font-weight: 700;
+  }
+
+  .cv-body table td:last-child {
+    padding-top: 2px !important;
+  }
+
+  .cv-body table tr {
+    padding: 4px 0;
+    border-bottom: 1px solid var(--lightgray) !important;
+  }
+}
